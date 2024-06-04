@@ -90,10 +90,10 @@ def main():
     predictor = DefaultPredictor(cfg)
     
     # Step 5: run inference
+    print(image_path)
     img = cv2.imread(image_path)
-    # print image shape
-    
-
+    # image shape
+    print("Image shape: ", img.shape)
     
     md = MetadataCatalog.get(cfg.DATASETS.TEST[0])
     if args.dataset == 'publaynet':
