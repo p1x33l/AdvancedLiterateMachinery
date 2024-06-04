@@ -114,9 +114,12 @@ def main():
                     instance_mode=ColorMode.SEGMENTATION)
     result = v.draw_instance_predictions(output.to("cpu"))
     result_image = result.get_image()[:, :, ::-1]
-
+    print("Result shape: ", result_image.shape)
     # step 6: save
-    cv2.imwrite(output_file_name, result_image)
+    try:
+        cv2.imwrite(output_file_name, result_image)
+    except Exception as e:
+        print("Error saving image: ", e)
 
 if __name__ == '__main__':
     main()
