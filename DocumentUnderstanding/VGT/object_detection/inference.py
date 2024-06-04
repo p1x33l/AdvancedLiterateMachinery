@@ -117,7 +117,7 @@ def main():
     print("Result shape: ", result_image.shape)
     # step 6: save
     try:
-        cv2.imwrite(output_file_name, result_image)
+        print(cv2.imwrite(output_file_name, result_image))
     except Exception as e:
         print("Error saving image: ", e)
 
