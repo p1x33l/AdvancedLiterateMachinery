@@ -34,7 +34,11 @@ if __name__ == "__main__":
     for i, image in enumerate(images):
         if args.format == "png":
             image.save(os.path.join(args.output, f"page_{i}.png"))
+            print("Saved document page as PNG")
         elif args.format == "jpg":
             image.save(os.path.join(args.output, f"page_{i}.jpg"))
+            print("Saved document page as JPG")
+        else:
+            logging.error("Unsupported image format. Please use 'png' or 'jpg'.")
 
     logging.info(f"PDF converted to images and saved at {args.output}")
