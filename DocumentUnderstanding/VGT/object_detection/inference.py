@@ -91,6 +91,9 @@ def main():
     
     # Step 5: run inference
     img = cv2.imread(image_path)
+    # print image shape
+    
+
     
     md = MetadataCatalog.get(cfg.DATASETS.TEST[0])
     if args.dataset == 'publaynet':
